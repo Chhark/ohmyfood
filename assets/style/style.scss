@@ -57,12 +57,15 @@ nav{
 .CTA{
     display: flex;
     flex-direction: column;
+    position: relative;
     align-items: center;
     text-align: center;
     padding: 50px 0;
     background-color: #f6f6f6;
 
+
     &-btn{
+        display: block;
         width: 58%;
         height: 50px;
         border-radius: 25px;
@@ -71,6 +74,26 @@ nav{
         font-size: 16px;
         font-family: 'Roboto';
         background: linear-gradient(to bottom right, $maincolor, $secondecolor);
+
+        &:hover{
+            &::after{
+                opacity: 1;
+            }  
+        }
+        &::after{
+            content: "";
+            border-radius: 25px;
+            width: 58%;
+            height: 50px;
+            top: 207px;
+            right: 0;
+            bottom: 0;
+            left: 78.5px;
+            position: absolute;
+            background-color: #ffffff2c;
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.75) ;
+            opacity: 0;
+        }
     }
     h1{
         margin: 0 0 20px 0;
@@ -148,6 +171,8 @@ nav{
             max-height: 183px;
             object-fit: cover;
             margin: 0;
+            object-position: center;
+            
         }
 
         &-content{
@@ -160,26 +185,73 @@ nav{
             &-text{
 
                 h3{
-                    margin: 0;
+                    margin: 5px 0 0 0;
                 }
             }
-
+            .Animation-like{
+                width: 24px;
+                display: flex;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+            }
             .fa-heart{
                 display: flex;
                 font-size: 22px;
-                justify-content: center;
-                align-items: center;
+                opacity: 1;
+                z-index: 1;
+                transition: opacity 0.3s ;
+            }
 
-                //&::before{
-                  //  justify-self: center;
-                    //align-self: center;
-                //}
+            .Like{
+                display: block;
+                width: 22px;
+                height: 21px;
+                position: absolute;
+                opacity: 0;
+                transition: opacity 0.3s ;
+            }
+
+            .fa-heart:active{
+                opacity: 0;
+            }
+
+            .fa-heart:active + .Like{
+                opacity: 1;
             }
 
         }
     }
+
 }
 
+
+.custom-checkbox {
+    position: relative;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+
+    i{
+        font-size: 22px;
+    }
+
+}
+
+.custom-checkbox input[type="checkbox"],
+.custom-checkbox .checked,
+.custom-checkbox .unchecked {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+.custom-checkbox input[type="checkbox"]:checked ~ .checked,
+.custom-checkbox input[type="checkbox"]:not(:checked) ~ .unchecked {
+    opacity: 1;
+}
 
 footer{
     display: flex;
