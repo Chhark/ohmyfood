@@ -1,10 +1,22 @@
+/***************Géneral******************/
 $maincolor:  #9356DC;
 $secondecolor: #FF79DA;
 $couleurtertiaire: #99E2D0;
+$greybg:  #f6f6f6;
 
 *{
     font-family: 'Roboto';
     font-weight: bold;
+}
+
+body{
+    max-width: 768px;
+    min-width: 320px;
+    margin: 0;
+}
+
+main{
+    width: 100%;
 }
 
 p{
@@ -13,31 +25,43 @@ p{
     font-weight: lighter;
     margin: 0;
 }
-
-body{
-    max-width: 768px;
-    min-width: 320px;
-    margin: 0;
-}
+/************Header****************/
 .header-accueil{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 10% 90%;
     width: 100%;
+    height: 63px;
     align-items: center;
     justify-content: center;
     &-logo{
         display: flex;
+        justify-content: center;
         align-items: center;
         height: 63px;
-
-        & img{
-            width: 162px;
-            height: 44px;
+        .Retour{
+            width: 17px;
+            height: 17px;
         }
     }
-}
+    img{
+        grid-column: 2;
+         width: 162px;
+        height: 44px;
+        justify-self: center;
+        margin-left: -11%;
+     }
 
+     
+    
+}
+.shadows{
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15) ;
+    z-index: 2;
+ }
 nav{
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -53,15 +77,16 @@ nav{
         margin-right: 5%;
     }
 }
-
+/**********CTA****************/
 .CTA{
     display: flex;
     flex-direction: column;
+    width: 100%;
     position: relative;
     align-items: center;
     text-align: center;
     padding: 50px 0;
-    background-color: #f6f6f6;
+    background-color: $greybg;
 
 
     &-btn{
@@ -105,7 +130,7 @@ nav{
         margin-bottom: 35px;
     }
 }
-
+/*********section fonctionnement****************/
 .Fonctionnement{
     display: flex;
     flex-direction: column;
@@ -125,7 +150,7 @@ nav{
         border-radius: 20px;
         justify-content: start;
         align-items: center;
-        background-color: #f6f6f6;
+        background-color: $greybg;
         box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
         width: 96.26865%;
         //width: 322.49px;
@@ -146,11 +171,11 @@ nav{
         }
     }
 }
-
+/***********Restaurant card*************/
 .Restaurants{
     display: flex;
     flex-direction: column;
-    background-color: #f6f6f6;
+    background-color: $greybg;
     padding: 50px 0 100px 0;
     gap: 18px;
 
@@ -168,6 +193,10 @@ nav{
         text-decoration: none;
         color: #000000;
 
+        article{
+            position:relative;
+            
+        }
 
         img{
             border-radius: 15px 15px 0 0 ;
@@ -177,6 +206,15 @@ nav{
             margin: 0;
             object-position: center;
             
+        }
+
+        .new{
+            border-radius: 0;
+            position: absolute;
+            width: 80px;
+            height: 29px;
+            top: 15px;
+            right: 12px;
         }
 
         &-content{
@@ -192,52 +230,68 @@ nav{
                     margin: 5px 0 0 0;
                 }
             }
-            .Animation-like{
-                width: 24px;
-                display: flex;
-                position: relative;
-                justify-content: center;
-                align-items: center;
-            }
-            .fa-heart{
-                display: flex;
-                font-size: 22px;
-                opacity: 1;
-                z-index: 1;
-                transition: opacity 0.3s ;
-            }
-
-            .Like{
-                display: block;
-                width: 22px;
-                height: 21px;
-                position: absolute;
-                opacity: 0;
-                transition: opacity 0.3s ;
-            }
-
-            .fa-heart:active{
-                opacity: 0;
-            }
-
-            .fa-heart:active + .Like{
-                opacity: 1;
-            }
+            
 
         }
     }
 
 }
+/****************Like**********/
+.Animation-like{
+    width: 24px;
+    min-height: auto;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
 
+    img{
+        border-radius: 0;
+        width: 22px;
+        height: 21px;
+    }
+}
+.Like-unchecked{
+    display: block;
+    width: 22px;
+    height: 21px;
+    position: absolute;
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 0.3s ;
+}
 
+.Like{
+    display: block;
+    width: 22px;
+    height: 21px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ;
+}
+
+.Like-unchecked:active{
+    opacity: 0;
+}
+
+.Like-unchecked:active + .Like{
+    opacity: 1;
+}
 .custom-checkbox {
     position: relative;
     cursor: pointer;
     width: 24px;
     height: 24px;
 
-    i{
-        font-size: 22px;
+    .Like-unchecked{
+        object-fit: fill;
+        display: block;
+        width: 22px;
+        height: 21px;
+        position: absolute;
+        opacity: 1;
+        z-index: 1;
+        transition: opacity 0.3s ;
     }
 
 }
@@ -256,6 +310,8 @@ nav{
 .custom-checkbox input[type="checkbox"]:not(:checked) ~ .unchecked {
     opacity: 1;
 }
+
+/**************footer***************/
 
 footer{
     display: flex;
@@ -304,19 +360,20 @@ footer{
     max-width: 768px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:    start;
+    align-items: center;
     padding: 40px 0;
     border-radius: 40px 40px 0 0;
     position: absolute;
     top: 283px;
     width: 100%;
-    background-color: #f6f6f6;
+    background-color: $greybg;
     margin: 0;
     h1{
         font-size: 28px;
         font-weight: 400;
         font-family: "Shrikhand";
-        margin: 0;
+        margin: 0 15px;
     }
 }
 .cateogries-plat{
@@ -335,7 +392,7 @@ footer{
         z-index: 2;
         margin: 0 0 0 3.46666666665%;
     }
-    img{
+    .line{
         object-fit: cover;
         width: 40px;
         height: 3px;
@@ -343,89 +400,279 @@ footer{
         z-index: 2;
         margin: -10px 0 0 3.46666666665%;
     }
-    .card-plat{
-        background-color: #ffffff;
-        border-radius: 15px;
-        display: grid; /* Changement ici */
-        grid-template-columns: 60% 25% 15%; /* Ajout de cette ligne*/ 
-        grid-template-rows: auto; /* Ajout de cette ligne*/ 
-        align-items: center; /* Ajout de cette ligne*/
-        justify-content: start;
+    .card {
+        position: relative;
         height: 69px;
         width: 93.0666666667%;
         margin: 0 3.46666666665%;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 15px;
+        background-color: #fff;
         overflow: hidden;
-
-        &-content{
-            overflow: visible;
-            z-index: 10;
-            width: 100%;
-            border-radius: 15px;
-            margin: 15px 0 15px 15px;
-            h3{
-                font-size: 18px;
-                white-space: nowrap;
-                margin: 0;
+      
+        &-label {
+          display: flex;
+          height: 69px;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+      
+        .card-text {
+            max-width: 55%;
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 0 15px;
+            gap: 5px;
+      
+            h3, p {
+              margin: 0;
+              white-space: nowrap;
             }
-            p{
-                white-space: nowrap;
+      
+            h3 {
+              font-size: 18px;
             }
-        }
-
-        &-prix{
-            grid-column: 2;
-            margin-right: 5px;
-            min-width: 18%;
-            max-width: 18%;
+      
+            p {
+              display: inline-block;
+              max-width: 90%;
+              font-size: 15px;
+              font-weight: 300;
+            }
+          }
+      
+          & .card-price-check-container {
             display: flex;
-            justify-content: end;
-            border-radius: 15px;
-            margin-bottom: 8px;
-            align-self: end;
-            transform: translateX(700%);
-            transition: transform 0.5s ease;
-        }
-
-        &-check{
-            grid-column: 3;
-            grid-row: 1;
-            display: flex;
-            justify-self: end;
-            align-self: start;
-            min-width: 59px;
-            max-width: 59px;
-            height: 69px;
-            display: flex;
-            background-color: $couleurtertiaire;
-            border-radius: 0 15px 15px 0;
-            align-items: center;
-            justify-content: center;
-            transform:translateX(100%) ;
+            align-items: end;
+            position: relative;
+            z-index: 2;
+            gap: 16px;
+            transform: translateX(59px);
             transform-origin: right;
             transition: transform 0.5s ease;
+      
+            & .card-price {
+              margin: 0 0 12px 0;
+              font-size: 15px;
+            }
+      
+            & .card-check {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: $couleurtertiaire;
+              border-radius: 0 15px 15px 0;
+              width: 59px;
+              height: 69px;
+              text-align: center;
+      
+              img {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
         }
-    }
-
-    .card-plat:hover .card-plat-check{
-        transform-origin: left;
-        transform: translateX(0);
-        transition: transform 0.5s ease;
-    }
-    .card-plat:hover .card-plat-prix{
-        transform: translateX(400%);
-        transition: transform 0.5s ease;
-
-    }
-
-    .card-plat:hover .card-plat-content{
-        transform-origin: left;
-        transform: scaleX(0.5);
-        h3 , p{
-            transform-origin: left;
-            transform: scaleX(2);
+      }
+      
+      .state-check:checked + .card-label {
+        .card-price-check-container {
+          transform: translateX(0);
+        }
+      
+        .card-text {
+          h3, p {
             overflow: hidden;
             text-overflow: ellipsis;
+          }
+        }
+      }
+      
+}
+
+/***********************loader*************************/
+.wave {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff; /* Couleur de fond du loader, à ajuster selon vos besoins */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: $maincolor; // La couleur de fin est la couleur de base de la vague
+    animation: fadeOut 3s forwards;
+  }
+  
+  .wave span {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    animation: wavy 1s infinite ease-in-out;
+    animation-delay: calc(0.1s * var(--i));
+    
+    &::before, &::after {
+      content: attr(data-letter);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: opacityChange 1s infinite ease-in-out;
+      animation-delay: inherit;
+    }
+  
+    &::before {
+      color: $secondecolor;
+      z-index: 0;
+      animation-delay: 0.5ms;
+    }
+  
+    &::after {
+      color: $couleurtertiaire;
+      animation-delay: calc(0.1s * var(--i) + 1.5s);
+    }
+  }
+  
+  /*****************Keyframe et boucle****************/
+  @keyframes wavy {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes opacityChange {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+      display: none; /* Ajouté pour enlever complètement le loader de la page */
+    }
+  }
+
+
+@for $i from 1 through 9 {
+    #plat#{$i} {
+      animation-delay: 0.5s * $i;
+    }
+  }
+
+/*****************Reponsive******************/
+@media (min-width: 765px){
+    body{
+        max-width: none;
+        width: 100%;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Mwidth{
+        max-width: 1055px;
+        width: 73.2638%;
+    }
+
+    .img-header{
+        height: 383px;
+    }
+
+    .CTA{
+        padding: 30px 0;
+    }
+
+    .Restaurant-Name{
+        top: 383px;
+    }
+
+    .CTA-btn{
+        max-width: 218px;
+    }
+
+    .Fonctionnement{
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 24px;
+        column-gap: 24px;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 12.5%;
+        height: 128.38px;
+        padding: 50px 0;
+
+        h2{
+           width: 100%; 
+
+        }
+        .etape{
+            width: 25%;
         }
     }
 
+    .Restaurants{
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 30px 12.5% ;
+        justify-content: center;
+        gap: 9.2592%;
+        row-gap: 50px;
+
+
+        h2{
+            width: 100%;
+        }
+
+        &-card{
+            width: 45.3703%;
+        }
+    }
+
+    footer{
+        flex-direction: row;
+        justify-content: end;
+        align-items: end;
+        height: 64px;
+        width: 100%;
+        padding: 25px 0;
+        
+
+        img{
+            width: 11px;
+            height: 13px;
+        }
+
+        .footer-logo{
+            order: 5;
+            margin: 0;
+            height: 20px;
+        }
+    
+        a{
+            align-items: end;
+    
+            p{
+                font-size: 16px;
+                font-weight: 400;
+            }
+    
+        }
+    }
 }

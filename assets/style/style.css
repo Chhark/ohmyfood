@@ -1,6 +1,18 @@
+@charset "UTF-8";
+/***************Géneral******************/
 * {
   font-family: "Roboto";
   font-weight: bold;
+}
+
+body {
+  max-width: 768px;
+  min-width: 320px;
+  margin: 0;
+}
+
+main {
+  width: 100%;
 }
 
 p {
@@ -10,30 +22,42 @@ p {
   margin: 0;
 }
 
-body {
-  max-width: 768px;
-  min-width: 320px;
-  margin: 0;
-}
-
+/************Header****************/
 .header-accueil {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 10% 90%;
   width: 100%;
+  height: 63px;
   align-items: center;
   justify-content: center;
 }
 .header-accueil-logo {
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 63px;
 }
-.header-accueil-logo img {
+.header-accueil-logo .Retour {
+  width: 17px;
+  height: 17px;
+}
+.header-accueil img {
+  grid-column: 2;
   width: 162px;
   height: 44px;
+  justify-self: center;
+  margin-left: -11%;
+}
+
+.shadows {
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  z-index: 2;
 }
 
 nav {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -49,9 +73,11 @@ nav .fa-location-dot {
   margin-right: 5%;
 }
 
+/**********CTA****************/
 .CTA {
   display: flex;
   flex-direction: column;
+  width: 100%;
   position: relative;
   align-items: center;
   text-align: center;
@@ -96,6 +122,7 @@ nav .fa-location-dot {
   margin-bottom: 35px;
 }
 
+/*********section fonctionnement****************/
 .Fonctionnement {
   display: flex;
   flex-direction: column;
@@ -132,6 +159,7 @@ nav .fa-location-dot {
   color: #7e7e7e;
 }
 
+/***********Restaurant card*************/
 .Restaurants {
   display: flex;
   flex-direction: column;
@@ -153,6 +181,9 @@ nav .fa-location-dot {
   text-decoration: none;
   color: #000000;
 }
+.Restaurants-card article {
+  position: relative;
+}
 .Restaurants-card img {
   border-radius: 15px 15px 0 0;
   width: 100%;
@@ -162,6 +193,14 @@ nav .fa-location-dot {
   margin: 0;
   -o-object-position: center;
      object-position: center;
+}
+.Restaurants-card .new {
+  border-radius: 0;
+  position: absolute;
+  width: 80px;
+  height: 29px;
+  top: 15px;
+  right: 12px;
 }
 .Restaurants-card-content {
   display: flex;
@@ -173,21 +212,33 @@ nav .fa-location-dot {
 .Restaurants-card-content-text h3 {
   margin: 5px 0 0 0;
 }
-.Restaurants-card-content .Animation-like {
+
+/****************Like**********/
+.Animation-like {
   width: 24px;
+  min-height: auto;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
 }
-.Restaurants-card-content .fa-heart {
-  display: flex;
-  font-size: 22px;
+.Animation-like img {
+  border-radius: 0;
+  width: 22px;
+  height: 21px;
+}
+
+.Like-unchecked {
+  display: block;
+  width: 22px;
+  height: 21px;
+  position: absolute;
   opacity: 1;
   z-index: 1;
   transition: opacity 0.3s;
 }
-.Restaurants-card-content .Like {
+
+.Like {
   display: block;
   width: 22px;
   height: 21px;
@@ -195,10 +246,12 @@ nav .fa-location-dot {
   opacity: 0;
   transition: opacity 0.3s;
 }
-.Restaurants-card-content .fa-heart:active {
+
+.Like-unchecked:active {
   opacity: 0;
 }
-.Restaurants-card-content .fa-heart:active + .Like {
+
+.Like-unchecked:active + .Like {
   opacity: 1;
 }
 
@@ -208,8 +261,16 @@ nav .fa-location-dot {
   width: 24px;
   height: 24px;
 }
-.custom-checkbox i {
-  font-size: 22px;
+.custom-checkbox .Like-unchecked {
+  -o-object-fit: fill;
+     object-fit: fill;
+  display: block;
+  width: 22px;
+  height: 21px;
+  position: absolute;
+  opacity: 1;
+  z-index: 1;
+  transition: opacity 0.3s;
 }
 
 .custom-checkbox input[type=checkbox],
@@ -227,6 +288,7 @@ nav .fa-location-dot {
   opacity: 1;
 }
 
+/**************footer***************/
 footer {
   display: flex;
   flex-direction: column;
@@ -266,7 +328,8 @@ footer a p {
   max-width: 768px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: start;
+  align-items: center;
   padding: 40px 0;
   border-radius: 40px 40px 0 0;
   position: absolute;
@@ -279,7 +342,7 @@ footer a p {
   font-size: 28px;
   font-weight: 400;
   font-family: "Shrikhand";
-  margin: 0;
+  margin: 0 15px;
 }
 
 .cateogries-plat {
@@ -299,7 +362,7 @@ footer a p {
   z-index: 2;
   margin: 0 0 0 3.4666666667%;
 }
-.cateogries-plat img {
+.cateogries-plat .line {
   -o-object-fit: cover;
      object-fit: cover;
   width: 40px;
@@ -308,81 +371,266 @@ footer a p {
   z-index: 2;
   margin: -10px 0 0 3.4666666667%;
 }
-.cateogries-plat .card-plat {
-  background-color: #ffffff;
-  border-radius: 15px;
-  display: grid; /* Changement ici */
-  grid-template-columns: 60% 25% 15%; /* Ajout de cette ligne*/
-  grid-template-rows: auto; /* Ajout de cette ligne*/
-  align-items: center; /* Ajout de cette ligne*/
-  justify-content: start;
+.cateogries-plat .card {
+  position: relative;
   height: 69px;
   width: 93.0666666667%;
   margin: 0 3.4666666667%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: #fff;
   overflow: hidden;
 }
-.cateogries-plat .card-plat-content {
-  overflow: visible;
-  z-index: 10;
-  width: 100%;
-  border-radius: 15px;
-  margin: 15px 0 15px 15px;
-}
-.cateogries-plat .card-plat-content h3 {
-  font-size: 18px;
-  white-space: nowrap;
-  margin: 0;
-}
-.cateogries-plat .card-plat-content p {
-  white-space: nowrap;
-}
-.cateogries-plat .card-plat-prix {
-  grid-column: 2;
-  margin-right: 5px;
-  min-width: 18%;
-  max-width: 18%;
+.cateogries-plat .card-label {
   display: flex;
-  justify-content: end;
-  border-radius: 15px;
-  margin-bottom: 8px;
-  align-self: end;
-  transform: translateX(700%);
-  transition: transform 0.5s ease;
-}
-.cateogries-plat .card-plat-check {
-  grid-column: 3;
-  grid-row: 1;
-  display: flex;
-  justify-self: end;
-  align-self: start;
-  min-width: 59px;
-  max-width: 59px;
   height: 69px;
-  display: flex;
-  background-color: #99E2D0;
-  border-radius: 0 15px 15px 0;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  transform: translateX(100%);
+  cursor: pointer;
+}
+.cateogries-plat .card-label .card-text {
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 15px;
+  gap: 5px;
+}
+.cateogries-plat .card-label .card-text h3, .cateogries-plat .card-label .card-text p {
+  margin: 0;
+  white-space: nowrap;
+}
+.cateogries-plat .card-label .card-text h3 {
+  font-size: 18px;
+}
+.cateogries-plat .card-label .card-text p {
+  display: inline-block;
+  max-width: 90%;
+  font-size: 15px;
+  font-weight: 300;
+}
+.cateogries-plat .card-label .card-price-check-container {
+  display: flex;
+  align-items: end;
+  position: relative;
+  z-index: 2;
+  gap: 16px;
+  transform: translateX(59px);
   transform-origin: right;
   transition: transform 0.5s ease;
 }
-.cateogries-plat .card-plat:hover .card-plat-check {
-  transform-origin: left;
+.cateogries-plat .card-label .card-price-check-container .card-price {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+}
+.cateogries-plat .card-label .card-price-check-container .card-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  width: 59px;
+  height: 69px;
+  text-align: center;
+}
+.cateogries-plat .card-label .card-price-check-container .card-check img {
+  width: 20px;
+  height: 20px;
+}
+.cateogries-plat .state-check:checked + .card-label .card-price-check-container {
   transform: translateX(0);
-  transition: transform 0.5s ease;
 }
-.cateogries-plat .card-plat:hover .card-plat-prix {
-  transform: translateX(400%);
-  transition: transform 0.5s ease;
-}
-.cateogries-plat .card-plat:hover .card-plat-content {
-  transform-origin: left;
-  transform: scaleX(0.5);
-}
-.cateogries-plat .card-plat:hover .card-plat-content h3, .cateogries-plat .card-plat:hover .card-plat-content p {
-  transform-origin: left;
-  transform: scaleX(2);
+.cateogries-plat .state-check:checked + .card-label .card-text h3, .cateogries-plat .state-check:checked + .card-label .card-text p {
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/***********************loader*************************/
+.wave {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff; /* Couleur de fond du loader, à ajuster selon vos besoins */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: #9356DC;
+  animation: fadeOut 3s forwards;
+}
+
+.wave span {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  animation: wavy 1s infinite ease-in-out;
+  animation-delay: calc(0.1s * var(--i));
+}
+.wave span::before, .wave span::after {
+  content: attr(data-letter);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: opacityChange 1s infinite ease-in-out;
+  animation-delay: inherit;
+}
+.wave span::before {
+  color: #FF79DA;
+  z-index: 0;
+  animation-delay: 0.5ms;
+}
+.wave span::after {
+  color: #99E2D0;
+  animation-delay: calc(0.1s * var(--i) + 1.5s);
+}
+
+/*****************Keyframe et boucle****************/
+@keyframes wavy {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes opacityChange {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    display: none; /* Ajouté pour enlever complètement le loader de la page */
+  }
+}
+#plat1 {
+  animation-delay: 0.5s;
+}
+
+#plat2 {
+  animation-delay: 1s;
+}
+
+#plat3 {
+  animation-delay: 1.5s;
+}
+
+#plat4 {
+  animation-delay: 2s;
+}
+
+#plat5 {
+  animation-delay: 2.5s;
+}
+
+#plat6 {
+  animation-delay: 3s;
+}
+
+#plat7 {
+  animation-delay: 3.5s;
+}
+
+#plat8 {
+  animation-delay: 4s;
+}
+
+#plat9 {
+  animation-delay: 4.5s;
+}
+
+/*****************Reponsive******************/
+@media (min-width: 765px) {
+  body {
+    max-width: none;
+    width: 100%;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Mwidth {
+    max-width: 1055px;
+    width: 73.2638%;
+  }
+  .img-header {
+    height: 383px;
+  }
+  .CTA {
+    padding: 30px 0;
+  }
+  .Restaurant-Name {
+    top: 383px;
+  }
+  .CTA-btn {
+    max-width: 218px;
+  }
+  .Fonctionnement {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 24px;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 12.5%;
+    height: 128.38px;
+    padding: 50px 0;
+  }
+  .Fonctionnement h2 {
+    width: 100%;
+  }
+  .Fonctionnement .etape {
+    width: 25%;
+  }
+  .Restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px 12.5%;
+    justify-content: center;
+    gap: 9.2592%;
+    row-gap: 50px;
+  }
+  .Restaurants h2 {
+    width: 100%;
+  }
+  .Restaurants-card {
+    width: 45.3703%;
+  }
+  footer {
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    height: 64px;
+    width: 100%;
+    padding: 25px 0;
+  }
+  footer img {
+    width: 11px;
+    height: 13px;
+  }
+  footer .footer-logo {
+    order: 5;
+    margin: 0;
+    height: 20px;
+  }
+  footer a {
+    align-items: end;
+  }
+  footer a p {
+    font-size: 16px;
+    font-weight: 400;
+  }
 }/*# sourceMappingURL=style.css.map */

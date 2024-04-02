@@ -11,16 +11,25 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="header-accueil">
-        <a href="index.html" class="header-accueil-logo">
+    <div class="wave">
+        <span style="--i:1;" data-letter="o">o</span>
+        <span style="--i:2;" data-letter="h">h</span>
+        <span style="--i:3;" data-letter="m">m</span>
+        <span style="--i:4;" data-letter="y">y</span>
+        <span style="--i:5;" data-letter="f">f</span>
+        <span style="--i:6;" data-letter="o">o</span>
+        <span style="--i:7;" data-letter="o">o</span>
+        <span style="--i:8;" data-letter="d">d</span>
+    </div>
+    <div class="loader"></div>
+    <header class="header-accueil shadows">
             <img src="images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
-        </a>
-        <nav>
-            <i class="fa-solid fa-location-dot"></i>
-            <p class="nav-Texte">Paris, Belleville</p>
-        </nav>
     </header>
     <main>
+        <nav>
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="search" placeholder="Paris, Belleville">
+        </nav>
         <section class="CTA">
             <h1>Réservez le menu qui vous convient</h1>
             <p>Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
@@ -49,6 +58,7 @@
             <a href="" class="Restaurants-card">
             <article>
                 <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Restaurants La palette du goût">
+                <img src="images/icone/Nouveau.svg" alt="" class="new">
                 <div class="Restaurants-card-content">
                     <div class="Restaurants-card-content-text">
                         <h3>La palette du goût</h3>
@@ -58,7 +68,7 @@
                         <label class="custom-checkbox">
                             <div>
                             <input type="checkbox" />
-                            <i class="fa-regular fa-heart unchecked"></i>
+                            <img src="../images/icone/notlike.svg" alt="notlike" class="Like-unchecked unchecked">
                             <img src="images/icone/Like.svg" alt="like" class="Like checked">
                             </div>
                         </label>
@@ -69,6 +79,7 @@
             <a href="#" class="Restaurants-card">
             <article>
                 <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée">
+                <img src="images/icone/Nouveau.svg" alt="" class="new">
                 <div class="Restaurants-card-content">
                     <div class="Restaurants-card-content-text">
                         <h3>La note enchantée</h3>
@@ -78,7 +89,7 @@
                         <label class="custom-checkbox">
                             <div>
                             <input type="checkbox" />
-                            <i class="fa-regular fa-heart unchecked"></i>
+                            <img src="../images/icone/notlike.svg" alt="notlike" class="Like-unchecked unchecked">
                             <img src="images/icone/Like.svg" alt="like" class="Like checked">
                             </div>
                         </label>
@@ -98,7 +109,7 @@
                         <label class="custom-checkbox">
                             <div>
                             <input type="checkbox" />
-                            <i class="fa-regular fa-heart unchecked"></i>
+                            <img src="../images/icone/notlike.svg" alt="notlike" class="Like-unchecked unchecked">
                             <img src="images/icone/Like.svg" alt="like" class="Like checked">
                             </div>
                         </label>
@@ -118,7 +129,7 @@
                         <label class="custom-checkbox">
                             <div>
                             <input type="checkbox" />
-                            <i class="fa-regular fa-heart unchecked"></i>
+                            <img src="../images/icone/notlike.svg" alt="notlike" class="Like-unchecked unchecked">
                             <img src="images/icone/Like.svg" alt="like" class="Like checked">
                             </div>
                         </label>

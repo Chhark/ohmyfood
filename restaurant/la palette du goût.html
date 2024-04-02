@@ -13,100 +13,154 @@
 <body>
     <header class="header-accueil">
         <a href="../index.html" class="header-accueil-logo">
-            <img src="../images/icone/Vector.svg" alt="">
-            <img src="../images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
+            <img src="../images/icone/Vector.svg" alt="" class="Retour">
         </a>
+        <img src="../images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
     </header>
     <main>
         <img class="img-header" src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photo du restaurant la palette du gout">
-        <Section class="Restaurant-Name">
+        <Section class="Restaurant-Name Mwidth">
             <h1>La palette du goût</h1>
             <div class="Animation-like">
                 <label class="custom-checkbox">
                     <div>
                     <input type="checkbox" />
-                    <i class="fa-regular fa-heart unchecked"></i>
+                    <img src="../images/icone/notlike.svg" alt="notlike" class="Like-unchecked unchecked">
                     <img src="../images/icone/Like.svg" alt="like" class="Like checked">
                     </div>
                 </label>
             </div>
         </Section>
-        <section class="cateogries-plat">
+        <section class="cateogries-plat Mwidth">
             <h2>entrées</h2>
-            <img src="../images/icone/Line 2.svg" alt="">
-            <div class="card-plat">
-                <div class="card-plat-content"><h3>Poulet rôti aux herbes de Provence </h3>
-                <p>Au piment d'Espelette </p>
+            <img src="../images/icone/Line 2.svg" alt="" class="line">
+            <div class="card">
+                <input type="checkbox" id="Plat1" class="state-check" hidden />
+                <label for="Plat1" class="card-label">
+                    <div class="card-text">
+                        <h3>Fricassée d'escargots</h3>
+                        <p>Au piment d'Espelette </p>
+                    </div>
+                    <div class="card-price-check-container">
+                        <span class="card-price">25€</span>
+                        <span class="card-check"><img src="../images/icone/Check.svg" alt=""></span> 
+                    </div>
+                </label>
             </div>
-                <div class="card-plat-prix"><p>35€</p></div>
-                <div class="card-plat-check"><img src="../images/icone//Check.svg" alt="plat-check"></div>
+            <div class="card">
+                <input type="checkbox" id="Plat2" class="state-check" hidden />
+                <label for="Plat2" class="card-label">
+                    <div class="card-text">
+                        <h3>Foie gras de canard mi-cuit</h3>
+                        <p>Et ses copeaux de truffe noire</p>
+                    </div>
+                    <div class="card-price-check-container">
+                        <span class="card-price">35€</span>
+                        <span class="card-check"><img src="../images/icone/Check.svg" alt=""></span> 
+                    </div>
+                </label>
             </div>
-            <div class="card-plat">
-                <div class="card-plat-content"><h3>Poulet rôti aux herbes de Provence </h3>
-                <p>Au piment d'Espelette </p>
-            </div>
-                <div class="card-plat-prix"><p>35€</p></div>
-                <div class="card-plat-check"><img src="../images/icone//Check.svg" alt="plat-check"></div>
-            </div>
-            <div class="card-plat">
-                <div class="card-plat-content"><h3>Poulet rôti aux herbes de Provence </h3>
-                <p>Au piment d'Espelette </p>
-            </div>
-                <div class="card-plat-prix"><p>35€</p></div>
-                <div class="card-plat-check"><img src="../images/icone//Check.svg" alt="plat-check"></div>
+            <div class="card">
+                <input type="checkbox" id="Plat3" class="state-check" hidden />
+                <label for="Plat3" class="card-label">
+                    <div class="card-text">
+                        <h3>Œuf au plat</h3>
+                        <p>Assaisonné à la truffe sur lit de caviar</p>
+                    </div>
+                    <div class="card-price-check-container">
+                        <span class="card-price">20€</span>
+                        <span class="card-check"><img src="../images/icone/Check.svg" alt=""></span> 
+                    </div>
+                </label>
             </div>
         </section>
-        <section class="cateogries-plat">
-            <h2>entrées</h2>
-            <img src="../images/icone/Line 2.svg" alt="">
-            <div class="card-plat">
-                <div class="card-plat-content"><h3>Poulet rôti aux herbes de Provence </h3>
-                <p>Au piment d'Espelette </p>
+        <section class="cateogries-plat Mwidth">
+            <h2>plats</h2>
+            <img src="../images/icone/Line 2.svg" alt="" class="line">
+            <div class="card">
+                <input type="checkbox" id="Plat4" class="state-check" hidden />
+                <label for="Plat4" class="card-label">
+                    <div class="card-text">
+                        <h3>Filet de bœuf aux herbes</h3>
+                        <p>Accompagné de sa ribambelle de légumes</p>
+                    </div>
+                    <div class="card-price-check-container">
+                        <span class="card-price">40€</span>
+                        <span class="card-check"><img src="../images/icone/Check.svg" alt=""></span> 
+                    </div>
+                </label>
             </div>
-                <div class="card-plat-prix"><p>35€</p></div>
-                <div class="card-plat-check"><img src="../images/icone//Check.svg" alt="plat-check"></div>
+            <div class="card">
+                <input type="checkbox" id="Plat5" class="state-check" hidden />
+                <label for="Plat5" class="card-label">
+                    <div class="card-text">
+                        <h3>Parmentier de queue de bœuf </h3>
+                        <p>À la truffe noire sur sa purée de panais</p>
+                    </div>
+                    <div class="card-price-check-container">
+                        <span class="card-price">35€</span>
+                        <span class="card-check"><img src="../images/icone/Check.svg" alt=""></span> 
+                    </div>
+                </label>
             </div>
-            <div class="card-plat">
-                <div class="card-plat-content"><h3>Poulet rôti aux herbes de Provence </h3>
-                <p>Au piment d'Espelette </p>
-            </div>
-                <div class="card-plat-prix"><p>35€</p></div>
-                <div class="card-plat-check"><img src="../images/icone//Check.svg" alt="plat-check"></div>
-            </div>
-            <div class="card-plat">
-                <div class="card-plat-content"><h3>Poulet rôti aux herbes de Provence </h3>
-                <p>Au piment d'Espelette </p>
-            </div>
-                <div class="card-plat-prix"><p>35€</p></div>
-                <div class="card-plat-check"><img src="../images/icone//Check.svg" alt="plat-check"></div>
-            </div>
-        </section>
-        <section class="cateogries-plat">
-            <h2>entrées</h2>
-            <img src="../images/icone/Line 2.svg" alt="">
-            <div class="card-plat">
-                <div class="card-plat-content"><h3>Poulet rôti aux herbes de Provence </h3>
-                <p>Au piment d'Espelette </p>
-            </div>
-                <div class="card-plat-prix"><p>35€</p></div>
-                <div class="card-plat-check"><img src="../images/icone//Check.svg" alt="plat-check"></div>
-            </div>
-            <div class="card-plat">
-                <div class="card-plat-content"><h3>Poulet rôti aux herbes de Provence </h3>
-                <p>Au piment d'Espelette </p>
-            </div>
-                <div class="card-plat-prix"><p>35€</p></div>
-                <div class="card-plat-check"><img src="../images/icone//Check.svg" alt="plat-check"></div>
-            </div>
-            <div class="card-plat">
-                <div class="card-plat-content"><h3>Poulet rôti aux herbes de Provence </h3>
-                <p>Au piment d'Espelette </p>
-            </div>
-                <div class="card-plat-prix"><p>35€</p></div>
-                <div class="card-plat-check"><img src="../images/icone//Check.svg" alt="plat-check"></div>
+            <div class="card">
+                <input type="checkbox" id="Plat6" class="state-check" hidden />
+                <label for="Plat6" class="card-label">
+                    <div class="card-text">
+                        <h3>Filet de turbot</h3>
+                        <p>Aux agrumes</p>
+                    </div>
+                    <div class="card-price-check-container">
+                        <span class="card-price">44€</span>
+                        <span class="card-check"><img src="../images/icone/Check.svg" alt=""></span> 
+                    </div>
+                </label>
             </div>
         </section>
-        <section class="CTA">
+        <section class="cateogries-plat Mwidth">
+            <h2>dessert</h2>
+            <img src="../images/icone/Line 2.svg" alt="" class="line">
+            <div class="card">
+                <input type="checkbox" id="Plat7" class="state-check" hidden />
+                <label for="Plat7" class="card-label">
+                    <div class="card-text">
+                        <h3>Paris-Brest</h3>
+                        <p>Revisité</p>
+                    </div>
+                    <div class="card-price-check-container">
+                        <span class="card-price">18€</span>
+                        <span class="card-check"><img src="../images/icone/Check.svg" alt=""></span> 
+                    </div>
+                </label>
+            </div>
+            <div class="card">
+                <input type="checkbox" id="Plat8" class="state-check" hidden />
+                <label for="Plat8" class="card-label">
+                    <div class="card-text">
+                        <h3>Macaron au chocolat d'exception </h3>
+                        <p>Et glace à la vanille de Madagascar</p>
+                    </div>
+                    <div class="card-price-check-container">
+                        <span class="card-price">25€</span>
+                        <span class="card-check"><img src="../images/icone/Check.svg" alt=""></span> 
+                    </div>
+                </label>
+            </div>
+            <div class="card">
+                <input type="checkbox" id="Plat9" class="state-check" hidden />
+                <label for="Plat9" class="card-label">
+                    <div class="card-text">
+                        <h3>Mousse au chocolat </h3>
+                        <p>Au piment d'Espelette et à la truffe noire</p>
+                    </div>
+                    <div class="card-price-check-container">
+                        <span class="card-price">23€</span>
+                        <span class="card-check"><img src="../images/icone/Check.svg" alt=""></span> 
+                    </div>
+                </label>
+            </div>
+        </section>
+        <section class="CTA Mwidth">
             <button class="CTA-btn">Commander</button>
         </section>    
         <footer>
