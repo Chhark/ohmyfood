@@ -55,6 +55,7 @@ p {
   z-index: 2;
 }
 
+/******nav***********/
 nav {
   position: relative;
   z-index: 1;
@@ -70,7 +71,22 @@ nav {
 nav .fa-location-dot {
   color: #353535;
   height: 16px;
-  margin-right: 5%;
+  margin-left: 1%;
+}
+nav input, nav input[type=search]:focus {
+  height: 19px;
+  border: none;
+  background-color: #eaeaea;
+  outline: none;
+  text-align: center;
+}
+nav input::-moz-placeholder {
+  font-size: 16px;
+  color: #000;
+}
+nav input::placeholder {
+  font-size: 16px;
+  color: #000;
 }
 
 /**********CTA****************/
@@ -157,6 +173,25 @@ nav .fa-location-dot {
 .Fonctionnement .etape i {
   font-size: 17px;
   color: #7e7e7e;
+}
+.Fonctionnement .etape .fa-mobile-screen-button::after, .Fonctionnement .etape .fa-store::after, .Fonctionnement .etape .fa-list-ul::after {
+  color: #9356DC;
+  opacity: 0;
+  position: absolute;
+  left: 7.5%;
+}
+.Fonctionnement .etape .fa-store::after {
+  content: "\f54e";
+}
+.Fonctionnement .etape .fa-mobile-screen-button::after {
+  content: "\f3cd";
+}
+.Fonctionnement .etape .fa-list-ul::after {
+  content: "\f0ca";
+}
+.Fonctionnement .etape:hover .fa-mobile-screen-button::after, .Fonctionnement .etape:hover .fa-store::after, .Fonctionnement .etape:hover .fa-list-ul::after {
+  opacity: 1;
+  z-index: 3;
 }
 
 /***********Restaurant card*************/
@@ -352,6 +387,7 @@ footer a p {
   padding-top: 50px;
   max-width: 768px;
   background-color: #f6f6f6;
+  /*************card plat***********************/
 }
 .cateogries-plat h2 {
   font-weight: 300;
@@ -380,6 +416,9 @@ footer a p {
   border-radius: 15px;
   background-color: #fff;
   overflow: hidden;
+  animation: slideIn 0.3s forwards;
+  transform: translateX(-200px);
+  opacity: 0;
 }
 .cateogries-plat .card-label {
   display: flex;
@@ -452,7 +491,7 @@ footer a p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #fff; /* Couleur de fond du loader, à ajuster selon vos besoins */
+  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -514,39 +553,49 @@ footer a p {
     display: none; /* Ajouté pour enlever complètement le loader de la page */
   }
 }
-#plat1 {
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+#plats1 {
   animation-delay: 0.5s;
 }
 
-#plat2 {
+#plats2 {
   animation-delay: 1s;
 }
 
-#plat3 {
+#plats3 {
   animation-delay: 1.5s;
 }
 
-#plat4 {
+#plats4 {
   animation-delay: 2s;
 }
 
-#plat5 {
+#plats5 {
   animation-delay: 2.5s;
 }
 
-#plat6 {
+#plats6 {
   animation-delay: 3s;
 }
 
-#plat7 {
+#plats7 {
   animation-delay: 3.5s;
 }
 
-#plat8 {
+#plats8 {
   animation-delay: 4s;
 }
 
-#plat9 {
+#plats9 {
   animation-delay: 4.5s;
 }
 

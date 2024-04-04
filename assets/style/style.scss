@@ -59,6 +59,8 @@ p{
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15) ;
     z-index: 2;
  }
+/******nav***********/
+
 nav{
     position: relative;
     z-index: 1;
@@ -74,7 +76,19 @@ nav{
     .fa-location-dot{
         color: #353535;
         height: 16px;
-        margin-right: 5%;
+        margin-left: 1%;
+    }
+
+    input , input[type="search" ]:focus{
+        height: 19px;
+        border: none;
+        background-color: #eaeaea;
+        outline: none;
+        text-align: center;
+    }
+    input::placeholder{
+        font-size: 16px;
+        color: #000;
     }
 }
 /**********CTA****************/
@@ -169,6 +183,27 @@ nav{
             font-size: 17px;
             color: #7e7e7e;
         }
+
+        .fa-mobile-screen-button::after , .fa-store::after , .fa-list-ul::after{
+            color: $maincolor;
+            opacity: 0;
+            position: absolute;
+            left: 7.5%;
+        }
+        .fa-store::after{
+            content: "\f54e";
+        }
+        .fa-mobile-screen-button::after{
+            content: "\f3cd";
+        }
+        .fa-list-ul::after{
+            content: "\f0ca";
+        }
+
+    }
+    .etape:hover .fa-mobile-screen-button::after ,.etape:hover  .fa-store::after ,.etape:hover .fa-list-ul::after{
+        opacity: 1;
+        z-index: 3;
     }
 }
 /***********Restaurant card*************/
@@ -400,6 +435,8 @@ footer{
         z-index: 2;
         margin: -10px 0 0 3.46666666665%;
     }
+
+/*************card plat***********************/
     .card {
         position: relative;
         height: 69px;
@@ -409,6 +446,9 @@ footer{
         border-radius: 15px;
         background-color: #fff;
         overflow: hidden;
+        animation: slideIn 0.3s forwards;
+        transform: translateX(-200px);
+        opacity: 0;
       
         &-label {
           display: flex;
@@ -475,7 +515,7 @@ footer{
           }
         }
       }
-      
+
       .state-check:checked + .card-label {
         .card-price-check-container {
           transform: translateX(0);
@@ -498,12 +538,12 @@ footer{
     left: 0;
     right: 0;
     bottom: 0;
-    background: #fff; /* Couleur de fond du loader, à ajuster selon vos besoins */
+    background: #fff; 
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    color: $maincolor; // La couleur de fin est la couleur de base de la vague
+    color: $maincolor; 
     animation: fadeOut 3s forwards;
   }
   
@@ -566,9 +606,20 @@ footer{
     }
   }
 
+  @keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 
 @for $i from 1 through 9 {
-    #plat#{$i} {
+    #plats#{$i} {
       animation-delay: 0.5s * $i;
     }
   }
