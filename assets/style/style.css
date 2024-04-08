@@ -358,6 +358,10 @@ footer a p {
   font-size: 16px;
   font-weight: 400;
 }
+footer a img {
+  width: 20px;
+  height: 17px;
+}
 
 .img-header {
   width: 100%;
@@ -371,7 +375,7 @@ footer a p {
   max-width: 768px;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   padding: 40px 0;
   border-radius: 40px 40px 0 0;
@@ -443,14 +447,14 @@ footer a p {
   margin: 0 0 0 15px;
   gap: 5px;
 }
-.cateogries-plat .card-label .card-text h3, .cateogries-plat .card-label .card-text p {
+.cateogries-plat .card-label .card-text .h3, .cateogries-plat .card-label .card-text .p {
   margin: 0;
   white-space: nowrap;
 }
-.cateogries-plat .card-label .card-text h3 {
+.cateogries-plat .card-label .card-text .h3 {
   font-size: 18px;
 }
-.cateogries-plat .card-label .card-text p {
+.cateogries-plat .card-label .card-text .p {
   display: inline-block;
   max-width: 90%;
   font-size: 15px;
@@ -487,7 +491,7 @@ footer a p {
 .cateogries-plat .state-check:checked + .card-label .card-price-check-container {
   transform: translateX(0);
 }
-.cateogries-plat .state-check:checked + .card-label .card-text h3, .cateogries-plat .state-check:checked + .card-label .card-text p {
+.cateogries-plat .state-check:checked + .card-label .card-text .h3, .cateogries-plat .state-check:checked + .card-label .card-text .p {
   overflow: hidden;
   text-overflow: ellipsis;
 }

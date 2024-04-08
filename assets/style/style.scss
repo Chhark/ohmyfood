@@ -385,6 +385,10 @@ footer{
             font-size: 16px;
             font-weight: 400;
         }
+        img{
+            width: 20px;
+            height: 17px;
+        }
 
     }
 
@@ -405,7 +409,7 @@ footer{
     max-width: 768px;
     display: flex;
     flex-direction: row;
-    justify-content:    start;
+    justify-content:    center;
     align-items: center;
     padding: 40px 0;
     border-radius: 40px 40px 0 0;
@@ -475,16 +479,16 @@ footer{
             margin: 0 0 0 15px;
             gap: 5px;
       
-            h3, p {
+            .h3, .p {
               margin: 0;
               white-space: nowrap;
             }
       
-            h3 {
+            .h3 {
               font-size: 18px;
             }
       
-            p {
+            .p {
               display: inline-block;
               max-width: 90%;
               font-size: 15px;
@@ -532,7 +536,7 @@ footer{
         }
       
         .card-text {
-          h3, p {
+          .h3, .p {
             overflow: hidden;
             text-overflow: ellipsis;
           }
