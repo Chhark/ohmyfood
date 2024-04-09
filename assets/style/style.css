@@ -51,7 +51,7 @@ p {
 
 .shadows {
   position: relative;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
 
@@ -66,7 +66,7 @@ nav {
   width: 100%;
   height: 50px;
   background-color: #EAEAEA;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 nav .fa-location-dot {
   color: #353535;
@@ -127,7 +127,7 @@ nav input::placeholder {
   left: 0;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.1725490196);
-  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
   opacity: 0;
   transition: opacity 1s ease;
 }
@@ -159,7 +159,7 @@ nav input::placeholder {
   justify-content: start;
   align-items: center;
   background-color: #f6f6f6;
-  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   width: 96.26865%;
   height: 72px;
 }
