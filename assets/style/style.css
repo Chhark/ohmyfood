@@ -615,6 +615,10 @@ footer a img {
   animation-delay: 4.5s;
 }
 
+#plats10 {
+  animation-delay: 5s;
+}
+
 /*****************Reponsive******************/
 @media (min-width: 765px) {
   body {

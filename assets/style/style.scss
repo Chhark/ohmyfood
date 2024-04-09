@@ -641,7 +641,7 @@ footer{
 }
 
 
-@for $i from 1 through 9 {
+@for $i from 1 through 10 {
     #plats#{$i} {
       animation-delay: 0.5s * $i;
     }
