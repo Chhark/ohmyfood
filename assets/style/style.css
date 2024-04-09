@@ -344,10 +344,13 @@ footer .footer-logo {
   width: 139px;
   margin: 10px 0 20px 0;
 }
+footer .GLF {
+  gap: 15px;
+}
 footer a {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 10px;
   color: #ffffff;
   text-decoration: none;
   font-family: "Roboto";
@@ -398,6 +401,7 @@ footer a img {
   gap: 12px;
   padding-top: 50px;
   max-width: 768px;
+  min-height: 280px;
   background-color: #f6f6f6;
   /*************card plat***********************/
 }
@@ -480,7 +484,7 @@ footer a img {
   align-items: center;
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
-  width: 59px;
+  width: 58px;
   height: 69px;
   text-align: center;
 }
@@ -617,6 +621,9 @@ footer a img {
     max-width: none;
     width: 100%;
   }
+  .header-accueil {
+    height: 90px;
+  }
   main {
     display: flex;
     flex-direction: column;
@@ -633,7 +640,13 @@ footer a img {
     padding: 30px 0;
   }
   .Restaurant-Name {
-    top: 383px;
+    top: 400px;
+  }
+  .MGT {
+    margin-top: 40px;
+  }
+  .card-text {
+    width: 80%;
   }
   .CTA-btn {
     max-width: 218px;
@@ -670,6 +683,18 @@ footer a img {
   .Restaurants-card {
     width: 45.3703%;
   }
+  .cateogries-plat {
+    align-items: center;
+  }
+  .cateogries-plat h2 {
+    margin-left: -53%;
+  }
+  .cateogries-plat .line {
+    margin-left: -56%;
+  }
+  .cateogries-plat .card {
+    width: 60.094%;
+  }
   footer {
     flex-direction: row;
     justify-content: end;
@@ -677,6 +702,7 @@ footer a img {
     height: 64px;
     width: 100%;
     padding: 25px 0;
+    gap: 30px;
   }
   footer img {
     width: 11px;
@@ -684,8 +710,12 @@ footer a img {
   }
   footer .footer-logo {
     order: 5;
-    margin: 0;
+    margin: 0 30px;
     height: 20px;
+  }
+  footer .GLF {
+    display: flex;
+    flex-direction: row;
   }
   footer a {
     align-items: end;
