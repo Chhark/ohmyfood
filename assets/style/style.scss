@@ -186,13 +186,15 @@ nav{
         i{
             font-size: 17px;
             color: #7e7e7e;
+            position: relative;
         }
 
         .fa-mobile-screen-button::after , .fa-store::after , .fa-list-ul::after{
             color: $maincolor;
             opacity: 0;
             position: absolute;
-            left: 7.5%;
+            left: /*7.5%*/0;
+            right: 0;
         }
         .fa-store::after{
             content: "\f54e";
@@ -323,7 +325,7 @@ nav{
     opacity: 0;
 }
 
-.Like-unchecked:active + .Like{
+.Like-unchecked:active + .Like {
     opacity: 1;
 }
 .custom-checkbox {
@@ -342,6 +344,16 @@ nav{
         z-index: 1;
         transition: opacity 0.3s ;
     }
+    &:hover .Like-unchecked,
+    input[type="checkbox"]:checked ~ .Like-unchecked {
+        opacity: 0;
+    }
+
+    &:hover .Like,
+    input[type="checkbox"]:checked ~ .Like {
+        opacity: 1;
+        z-index: 2; // Assure que l'image like est au-dessus de l'image not like
+    }
 
 }
 
@@ -356,7 +368,7 @@ nav{
 }
 
 .custom-checkbox input[type="checkbox"]:checked ~ .checked,
-.custom-checkbox input[type="checkbox"]:not(:checked) ~ .unchecked {
+.custom-checkbox input[type="checkbox"]:not(:checked) ~ .unchecked{
     opacity: 1;
 }
 
@@ -376,6 +388,8 @@ footer{
     }
 
     .GLF{
+        display: flex;
+        flex-direction: column;
         gap: 15px;
     }
 
@@ -539,7 +553,7 @@ footer{
         }
       }
 
-      .state-check:checked + .card-label {
+      .state-check:checked + .card-label , .card:hover  {
         .card-price-check-container {
           transform: translateX(0);
         }

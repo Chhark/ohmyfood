@@ -173,12 +173,14 @@ nav input::placeholder {
 .Fonctionnement .etape i {
   font-size: 17px;
   color: #7e7e7e;
+  position: relative;
 }
 .Fonctionnement .etape .fa-mobile-screen-button::after, .Fonctionnement .etape .fa-store::after, .Fonctionnement .etape .fa-list-ul::after {
   color: #9356DC;
   opacity: 0;
   position: absolute;
-  left: 7.5%;
+  left: 0;
+  right: 0;
 }
 .Fonctionnement .etape .fa-store::after {
   content: "\f54e";
@@ -315,6 +317,15 @@ nav input::placeholder {
   z-index: 1;
   transition: opacity 0.3s;
 }
+.custom-checkbox:hover .Like-unchecked,
+.custom-checkbox input[type=checkbox]:checked ~ .Like-unchecked {
+  opacity: 0;
+}
+.custom-checkbox:hover .Like,
+.custom-checkbox input[type=checkbox]:checked ~ .Like {
+  opacity: 1;
+  z-index: 2;
+}
 
 .custom-checkbox input[type=checkbox],
 .custom-checkbox .checked,
@@ -345,6 +356,8 @@ footer .footer-logo {
   margin: 10px 0 20px 0;
 }
 footer .GLF {
+  display: flex;
+  flex-direction: column;
   gap: 15px;
 }
 footer a {
@@ -492,10 +505,10 @@ footer a img {
   width: 20px;
   height: 20px;
 }
-.cateogries-plat .state-check:checked + .card-label .card-price-check-container {
+.cateogries-plat .state-check:checked + .card-label .card-price-check-container, .cateogries-plat .card:hover .card-price-check-container {
   transform: translateX(0);
 }
-.cateogries-plat .state-check:checked + .card-label .card-text .h3, .cateogries-plat .state-check:checked + .card-label .card-text .p {
+.cateogries-plat .state-check:checked + .card-label .card-text .h3, .cateogries-plat .state-check:checked + .card-label .card-text .p, .cateogries-plat .card:hover .card-text .h3, .cateogries-plat .card:hover .card-text .p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
