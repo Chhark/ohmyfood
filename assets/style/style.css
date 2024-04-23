@@ -360,7 +360,7 @@ footer .GLF {
   flex-direction: column;
   gap: 15px;
 }
-footer a {
+footer a, footer .p {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -370,11 +370,11 @@ footer a {
   font-size: 16px;
   font-weight: 400;
 }
-footer a p {
+footer a p, footer .p p {
   font-size: 16px;
   font-weight: 400;
 }
-footer a img {
+footer a img, footer .p img {
   width: 20px;
   height: 17px;
 }
@@ -579,7 +579,7 @@ footer a img {
   to {
     opacity: 0;
     visibility: hidden;
-    display: none; /* Ajouté pour enlever complètement le loader de la page */
+    display: none;
   }
 }
 @keyframes slideIn {
